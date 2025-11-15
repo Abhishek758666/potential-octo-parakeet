@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Maintenance - Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        max-height: 90dvh;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 30px;
+        padding: 40px 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        animation: fadeInUp 0.8s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .illustration {
+        animation: float 3s ease-in-out infinite;
+        flex-shrink: 0;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .illustration svg {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 2em;
+        color: #333;
+        font-weight: 700;
+      }
+
+      .subtitle {
+        font-size: 1em;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      .connect-section {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .connect-title {
+        font-size: 1.2em;
+        color: #444;
+        font-weight: 600;
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        background: rgb(154, 49, 234);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        font-size: 0.95em;
+      }
+
+      .link-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+      }
+
+      .link-btn svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .email-section {
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 15px;
+      }
+
+      .email-label {
+        font-size: 0.85em;
+        color: #666;
+      }
+
+      .email {
+        font-size: 1em;
+        color: #667eea;
+        font-weight: 600;
+      }
+
+      .dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        background: #667eea;
+        border-radius: 50%;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      .dot:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      .dot:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 40px 25px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        .subtitle {
+          font-size: 1em;
+        }
+
+        .links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .link-btn {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="illustration">
+        <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- Computer Monitor -->
+          <rect
+            x="150"
+            y="150"
+            width="200"
+            height="140"
+            rx="5"
+            fill="#667eea"
+            opacity="0.9"
+          />
+          <rect x="160" y="160" width="180" height="110" fill="#f0f0f0" />
+
+          <!-- Screen content - Tools and gears -->
+          <circle cx="250" cy="215" r="25" fill="#764ba2" opacity="0.7" />
+          <circle cx="220" cy="215" r="15" fill="#667eea" opacity="0.8" />
+          <circle cx="280" cy="215" r="15" fill="#667eea" opacity="0.8" />
+
+          <!-- Loading bar -->
+          <rect x="180" y="245" width="140" height="8" rx="4" fill="#e0e0e0" />
+          <rect x="180" y="245" width="90" height="8" rx="4" fill="#764ba2">
+            <animate
+              attributeName="width"
+              from="0"
+              to="90"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+
+          <!-- Monitor stand -->
+          <rect
+            x="235"
+            y="290"
+            width="30"
+            height="40"
+            fill="#667eea"
+            opacity="0.9"
+          />
+          <rect
+            x="210"
+            y="330"
+            width="80"
+            height="10"
+            rx="5"
+            fill="#667eea"
+            opacity="0.9"
+          />
+
+          <!-- Tools floating around -->
+          <g id="wrench" transform="translate(100, 200)">
+            <path d="M 0,0 L 5,10 L 10,5 L 5,0 Z" fill="#764ba2">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 5 5"
+                to="360 5 5"
+                dur="4s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </g>
+
+          <g id="gear" transform="translate(380, 180)">
+            <circle
+              cx="0"
+              cy="0"
+              r="15"
+              fill="none"
+              stroke="#667eea"
+              stroke-width="3"
+            />
+            <circle cx="0" cy="0" r="8" fill="#667eea" />
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 380 180"
+              to="360 380 180"
+              dur="5s"
+              repeatCount="indefinite"
+            />
+          </g>
+
+          <!-- Code brackets -->
+          <text x="90" y="120" font-size="40" fill="#764ba2" opacity="0.6">
+            &lt;/&gt;
+          </text>
+          <text x="380" y="280" font-size="40" fill="#667eea" opacity="0.6">
+            { }
+          </text>
+        </svg>
+      </div>
+
+      <h1>🛠️ Under Maintenance</h1>
+      <p class="subtitle">
+        I'm currently working on something awesome! My portfolio is getting a
+        fresh new look.<br />
+        In the meantime, feel free to connect with me through the links below.
+      </p>
+
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <div class="connect-section">
+        <h2 class="connect-title">Let's Connect!</h2>
+
+        <div class="links">
+          <a
+            href="https://www.linkedin.com/in/abhishek-khati-b4a427299/"
+            class="link-btn"
+            target="_blank"
+          >
+            <svg fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/yourusername"
+            href="https://github.com/Abhishek758666"
+            class="link-btn"
+            target="_blank"
+          >
+            <svg fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+
+        <div class="email-section">
+          <div class="email-label">Or drop me an email at:</div>
+          <a class="email" href="mailto:abhishekkhati39@gmail.com"
+            >abhishekkhati39@gmail.com</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
